@@ -11,4 +11,4 @@ print("Zanonimizowany tekst: ", anonymus_text)
 
 for digit in "0123456789":
     text = text.replace(digit, "X") # konieczne przypisanie bo replace() zwraca kopie 
-print("Rozwiązanie z zajęć 1: ", text)
+print("Rozwiązanie: ", text)
