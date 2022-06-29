@@ -9,6 +9,10 @@ print("Zanonimizowany tekst: ", anonymus_text)
 
 # II version
 
+filename = input("Podaj nazwę pliku:")
+stream = open(filename) 
+text = stream.read()
+stream.close()
 for digit in "0123456789":
     text = text.replace(digit, "X") # konieczne przypisanie bo replace() zwraca kopie 
-print("Rozwiązanie z zajęć 1: ", text)
+print("Zanonimizowany tekst: ", text)
