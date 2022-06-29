@@ -1,0 +1,8 @@
+text = input("Podaj tekst:")
+anonymus_text = ""
+for char in text:
+    if char.isdigit():
+        anonymus_text +="X"
+    else:
+        anonymus_text += char
+print("Zanonimizowany tekst: ", anonymus_text)
