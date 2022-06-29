@@ -1,4 +1,7 @@
-text = input("Podaj tekst:")
+filename = input("Podaj nazwę pliku:")
+stream = open(filename) 
+text = stream.read()
+stream.close()
 anonymus_text = ""
 for char in text:
     if char.isdigit():
