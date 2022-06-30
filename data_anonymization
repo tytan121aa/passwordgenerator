@@ -1,21 +1,41 @@
-filename = input("Podaj nazwę pliku:")
-stream = open(filename) 
-text = stream.read()
-stream.close()
+input_ = input("Podaj nazwę pliku wejściowego:")
+
+with open(input_) as stream:  #ewentualnie parametr "r"
+    text = stream.read() 
 anonymus_text = ""
 for char in text:
     if char.isdigit():
         anonymus_text +="X"
     else:
         anonymus_text += char
-print("Zanonimizowany tekst: ", anonymus_text)
-
+output = input("Podaj nazwę pliku wyjściowego:")
+output2 = 0
+for char in output:
+    if char.isalpha:
+        output2 += 1
+if output2 == 0: # w IF starać się unikać negacji (!=)
+    print("Nie podałeś nazwy pliku. Twój zanonimizowany tekst wygląda następująco: \n",anonymus_text)
+else:
+    with open(output, "x") as writer:
+        writer.write(anonymus_text)
+    print("Pomyślnie zapisano")
+    
 # II version
+input_ = input("Podaj nazwę pliku wejściowego:")
 
-filename = input("Podaj nazwę pliku:")
-stream = open(filename) 
-text = stream.read()
-stream.close()
+with open(input_) as stream:  #ewentualnie parametr "r"
+    text = stream.read() 
 for digit in "0123456789":
     text = text.replace(digit, "X") # konieczne przypisanie bo replace() zwraca kopie 
-print("Zanonimizowany tekst: ", text)
+output = input("Podaj nazwę pliku wyjściowego:")
+output2 = 0
+for char in output:
+    if char.isalpha:
+        output2 += 1
+if output2 == 0: # w IF starać się unikać negacji (!=)
+    print("Nie podałeś nazwy pliku. Twój zanonimizowany tekst wygląda następująco: \n",text)
+else:
+    with open(output, "x") as writer:
+        writer.write(text)
+    print("Pomyślnie zapisano")
+    
