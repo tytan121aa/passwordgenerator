@@ -1,0 +1,20 @@
+plik = input("Podaj nazwę pliku:")
+with open(plik) as stream:
+    costs = stream.read()
+costs = costs.split("\n")
+
+list_of_expenses = []
+for cost in costs:
+    tokens = cost.split()
+    if tokens:
+        expense = float(tokens[0])
+        list_of_expenses.append(expense)
+sum_of_expenses = sum(list_of_expenses)
+max_expenses = max(list_of_expenses)
+min_expenses = min(list_of_expenses)
+avarage_expenses = sum_of_expenses/len(list_of_expenses)
+
+print("Suma wydatków: ", sum_of_expenses)
+print("Max wydatek: " , max_expenses)
+print("Min wydatek: ", min_expenses)
+print("Średni wydatek: ", avarage_expenses)
