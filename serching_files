@@ -10,9 +10,7 @@ with open(filename) as stream:
 
 text = text.lower()
 texts = text.split("\n")
-for char in text:
-    if char in PUNCTUATION:
-        text = text.replace(char,"")
+
 for text in texts:
     for char in text:
         if char in PUNCTUATION:
