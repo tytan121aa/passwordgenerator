@@ -26,8 +26,7 @@ pattern = pattern.lower()
 
 words_count = 0
 for word in comments:
-    for i in word:
-        if i == pattern:
-            words_count += 1
+    if pattern in word:
+        words_count += 1
 
 print("Słowo ", pattern ,"w podanym pliku pojawia się", words_count, "razy")
