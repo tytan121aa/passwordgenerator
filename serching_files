@@ -7,21 +7,23 @@ comments = []
 filename = input("Podaj nazwę pliku:")
 with open(filename) as stream:
     text = stream.read()
-    text = text.lower()
-    texts = text.split("\n")
+
+text = text.lower()
+texts = text.split("\n")
+for char in text:
+    if char in PUNCTUATION:
+        text = text.replace(char,"")
+for text in texts:
     for char in text:
         if char in PUNCTUATION:
             text = text.replace(char,"")
-    for text in texts:
-        for char in text:
-            if char in PUNCTUATION:
-                text = text.replace(char,"")
-        text = text.split()
-        if text:
-            comments.append(text)
+    text = text.split()
+    if text:
+        comments.append(text)
 
-pattern = input("Ile razy w pliku powtarza się słowo: ")
+pattern = input("Ile razy w pliku powtarza się słowo: ", )
 pattern = pattern.lower()
+
 words_count = 0
 for word in comments:
     for i in word:
